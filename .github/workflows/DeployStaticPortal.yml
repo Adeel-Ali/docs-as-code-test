@@ -20,7 +20,7 @@ jobs:
       run: zip -qq -r portal-input.zip .
       
     - name: Call build endpoint
-      run: curl -X POST --url 'https://www.apimatic.io/api/portal' -H 'Authorization:X-Auth-Key $wosykkoUIhcBeBkhwxgjsxjl_qeDXuNWWV9Ikpuk_0RxmW7zrSkkUNmlwvCKHJGR' -F 'file=@portal-input.zip' -o portal-output.zip
+      run: curl -X POST --url 'https://www.apimatic.io/api/portal' -H 'Authorization:X-Auth-Key ${{ secrets.API_KEY }}' -F 'file=@portal-input.zip' -o portal-output.zip
       
     - name: list 
       run: ls
@@ -43,8 +43,8 @@ jobs:
         enable-commit-comment: true
         overwrites-pull-request-comment: true
       env:
-        NETLIFY_AUTH_TOKEN: ${{ foVQYxIAPmuWRYa3sZ_g_te75CtIo6R8rLEgGSU1x6I }}
-        NETLIFY_SITE_ID: ${{ 2f1a2ad1-6937-4731-9c60-e8e8d480be71 }}
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
       timeout-minutes: 1
     
       
