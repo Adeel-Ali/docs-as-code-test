@@ -1,7 +1,7 @@
 toc:
   - group: Getting Started
     items:
-      - generate: How to Get Started
+      - generate: Introduction
         from: getting-started
   - group: Guides
     dir: guides
